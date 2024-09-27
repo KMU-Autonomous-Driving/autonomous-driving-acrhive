@@ -27,6 +27,8 @@ def region(image):
 def average(image, lines):
     left = []
     right = []
+    if lines is None:
+        return None
     for line in lines:
         x1, y1, x2, y2 = line.reshape(4)
         parameters = np.polyfit((x1, x2), (y1, y2), 1)
@@ -37,6 +39,9 @@ def average(image, lines):
         else:
             right.append((slope, y_int))
 
+    if len(left) == 0 or len(right) == 0:
+        return None
+
     right_avg = np.average(right, axis=0)
     left_avg = np.average(left, axis=0)
     left_line = make_points(image, left_avg)
@@ -44,6 +49,8 @@ def average(image, lines):
     return np.array([left_line, right_line]) 
 
 def make_points(image, average): 
+    if average is None:
+        return None
     slope, y_int = average 
     y1 = image.shape[0]
     y2 = int(y1 * (3/5))
@@ -55,8 +62,9 @@ def display_lines(image, lines):
     lines_image = np.zeros_like(image)
     if lines is not None:
         for line in lines:
-            x1, y1, x2, y2 = line
-            cv2.line(lines_image, (x1, y1), (x2, y2), (255, 0, 0), 10)
+            if line is not None:
+                x1, y1, x2, y2 = line
+                cv2.line(lines_image, (x1, y1), (x2, y2), (255, 0, 0), 10)
     return lines_image
 
 # Load the video
@@ -71,7 +79,7 @@ while(cap.isOpened()):
     gaus_image = gauss(grey_image)
     edges = canny(gaus_image)
     isolated = region(edges)
-    lines = cv2.HoughLinesP(isolated, 2, np.pi/180, 100, np.array([]), minLineLength=40, maxLineGap=5)
+    lines = cv2.HoughLinesP(isolated, 2, np.pi/180, 100, np.array([]), minLineLength=20, maxLineGap=50)
     averaged_lines = average(copy, lines)
     black_lines = display_lines(copy, averaged_lines)
     lanes = cv2.addWeighted(copy, 0.8, black_lines, 1, 1)

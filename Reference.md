@@ -48,6 +48,8 @@
   [lane change with yolo](https://medium.com/@karthishido/mastering-object-tracking-a-deep-dive-into-python-yolov8-and-opencv-b03d655f804a)
 
   [lane change with c++](https://autowarefoundation.github.io/autoware.universe/pr-2609/planning/behavior_path_planner/behavior_path_planner_lane_change/)
+  
+  [Pairing Lane Detection with Object Detection](https://srianumakonda.medium.com/pairing-lane-detection-with-object-detection-665b30462952)
 
   -OBSTACLE
  

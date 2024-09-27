@@ -43,6 +43,8 @@
 
   [lane detection with openCV](https://medium.com/@mrhwick/simple-lane-detection-with-opencv-bfeb6ae54ec0)
 
+  [lane change with yolo](https://medium.com/@karthishido/mastering-object-tracking-a-deep-dive-into-python-yolov8-and-opencv-b03d655f804a)
+
   -OBSTACLE
  
   -SIGN
@@ -94,3 +96,5 @@
    [A disection into 3D Object Detection through PyTorch based code and ComplexYOLO Algorithm](https://medium.com/@abdulhaq.ah/a-disection-into-3d-object-detection-through-pytorch-based-code-and-complexyolo-algorithm-d45cceab4570)
 
 [Qcar training set](https://universe.roboflow.com/dajeon-university/q-car-0328/dataset/2)
+
+

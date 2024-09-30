@@ -1,4 +1,4 @@
-import pyrealsense as rs
+import pyrealsense2 as rs
 import numpy as np
 import cv2
 
@@ -74,6 +74,22 @@ def display_lines(image, lines):
                 cv2.line(lines_image, (x1, y1), (x2, y2), (255, 0, 0), 10)
     return lines_image
 
+def merge_lines(lines, threshold=50):
+    if lines is None:
+        return None
+    merged_lines = []
+    for line in lines:
+        if len(merged_lines) == 0:
+            merged_lines.append(line)
+        else:
+            for merged_line in merged_lines:
+                if np.linalg.norm(line[:2] - merged_line[:2]) < threshold and np.linalg.norm(line[2:] - merged_line[2:]) < threshold:
+                    merged_line = (merged_line + line) / 2
+                    break
+            else:
+                merged_lines.append(line)
+    return merged_lines
+
 try:
     while True:
         # Wait for a coherent pair of frames: depth and color
@@ -92,7 +108,8 @@ try:
         edges = canny(gaus_image)
         isolated = region(edges)
         lines = cv2.HoughLinesP(isolated, 2, np.pi/180, 100, np.array([]), minLineLength=20, maxLineGap=50)
-        averaged_lines = average(copy, lines)
+        merged_lines = merge_lines(lines)
+        averaged_lines = average(copy, merged_lines)
         black_lines = display_lines(copy, averaged_lines)
         lanes = cv2.addWeighted(copy, 0.8, black_lines, 1, 1)
 

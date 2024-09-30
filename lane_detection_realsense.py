@@ -11,15 +11,19 @@ config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
 # Start streaming
 pipeline.start(config)
 
+# Convert image to grayscale
 def grey(image):
     return cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 
+# Apply Gaussian blur to the image
 def gauss(image):
     return cv2.GaussianBlur(image, (5, 5), 0)
 
+# Perform Canny edge detection
 def canny(image):
     return cv2.Canny(image, 50, 150)
 
+# Define a region of interest to focus on lane lines
 def region(image):
     height, width = image.shape
     triangle = np.array([
@@ -31,6 +35,7 @@ def region(image):
     mask = cv2.bitwise_and(image, mask)
     return mask
 
+# Calculate the average slope and intercept for left and right lane lines
 def average(image, lines):
     left = []
     right = []
@@ -55,6 +60,7 @@ def average(image, lines):
     right_line = make_points(image, right_avg)
     return np.array([left_line, right_line]) 
 
+# Convert slope and intercept into x, y coordinates
 def make_points(image, average): 
     if average is None:
         return None
@@ -65,6 +71,7 @@ def make_points(image, average):
     x2 = int((y2 - y_int) // slope)
     return np.array([x1, y1, x2, y2])
 
+# Draw lane lines on the image
 def display_lines(image, lines):
     lines_image = np.zeros_like(image)
     if lines is not None:

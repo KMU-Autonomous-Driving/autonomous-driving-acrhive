@@ -2,6 +2,7 @@ import cv2
 from PIL import Image
 from ultralytics import YOLO
 import pyrealsense2 as rs
+import numpy as np
 
 # Load a pretrained YOLOv8n model
 model = YOLO('best_traffic_small_yolo.pt')

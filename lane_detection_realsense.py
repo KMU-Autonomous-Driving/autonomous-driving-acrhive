@@ -74,22 +74,6 @@ def display_lines(image, lines):
                 cv2.line(lines_image, (x1, y1), (x2, y2), (255, 0, 0), 10)
     return lines_image
 
-def merge_lines(lines, threshold=50):
-    if lines is None:
-        return None
-    merged_lines = []
-    for line in lines:
-        if len(merged_lines) == 0:
-            merged_lines.append(line)
-        else:
-            for merged_line in merged_lines:
-                if np.linalg.norm(line[:2] - merged_line[:2]) < threshold and np.linalg.norm(line[2:] - merged_line[2:]) < threshold:
-                    merged_line = (merged_line + line) / 2
-                    break
-            else:
-                merged_lines.append(line)
-    return merged_lines
-
 try:
     while True:
         # Wait for a coherent pair of frames: depth and color
@@ -107,14 +91,14 @@ try:
         gaus_image = gauss(grey_image)
         edges = canny(gaus_image)
         isolated = region(edges)
-        lines = cv2.HoughLinesP(isolated, 2, np.pi/180, 100, np.array([]), minLineLength=20, maxLineGap=50)
-        merged_lines = merge_lines(lines)
-        averaged_lines = average(copy, merged_lines)
+        # Adjusted parameters for HoughLinesP to detect closer lines
+        lines = cv2.HoughLinesP(isolated, 1, np.pi/180, 25, np.array([]), minLineLength=5, maxLineGap=10)
+        averaged_lines = average(copy, lines)
         black_lines = display_lines(copy, averaged_lines)
         lanes = cv2.addWeighted(copy, 0.8, black_lines, 1, 1)
 
         # Show images
-        cv2.imshow('RealSense', lanes)
+        cv2.imshow("RealSense Lanes", lanes)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 finally:

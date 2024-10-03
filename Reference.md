@@ -30,6 +30,7 @@
   [traffic lighs negotiation](https://kr.mathworks.com/help/mpc/ug/traffic-light-negotiation.html)
 
   [traffic lights dection](https://dev.to/andreygermanov/a-practical-introduction-to-object-detection-with-yolov8-neural-network-3n8c)
+  [traffic sign decetion](https://www.kaggle.com/code/pkdarabi/traffic-signs-detection-using-yolov8)
   
   -LANE
 

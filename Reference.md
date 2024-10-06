@@ -53,6 +53,7 @@
   -OBSTACLE
  
   -SIGN
+  [Traffic sign Segmentation with classical image processing methods](https://jq0112358.medium.com/traffic-sign-segmentation-with-classical-image-processing-methods-canny-edge-detection-color-8ff1096535db)
     
   -PARKING
   [Snagging parking Spaces wiht mask R-CNN and Python](https://medium.com/@ageitgey/snagging-parking-spaces-with-mask-r-cnn-and-python-955f2231c400)

@@ -211,7 +211,7 @@ if len(image_files) > 0:
 
 # 원래 비디오 먼저 보여줌
 # Convert mp4
-!ffmpeg -y -loglevel panic -i /kaggle/input/cardetection/video.mp4 output.mp4## <b>6 <span style='color:#e61227'>|</span> Export The Final Model Of Detect Traffic Signs </b>
+#!ffmpeg -y -loglevel panic -i /kaggle/input/cardetection/video.mp4 output.mp4## <b>6 <span style='color:#e61227'>|</span> Export The Final Model Of Detect Traffic Signs </b>
 
 #**Tip:** The ultimate goal of training a model is to deploy it for real-world applications. Export mode in Ultralytics YOLOv8 offers a versatile range of options for exporting your trained model to different formats, making it deployable across various platforms and devices.
 
@@ -224,7 +224,7 @@ Valid_model.predict(source="/kaggle/input/cardetection/video.mp4", show=True,sav
 
 # show result
 # Convert format
-!ffmpeg -y -loglevel panic -i /kaggle/working/runs/detect/predict/video.avi result_out.mp4
+#!ffmpeg -y -loglevel panic -i /kaggle/working/runs/detect/predict/video.avi result_out.mp4
 
 # Display the video 
 Video("result_out.mp4", width=960)

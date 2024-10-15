@@ -1,6 +1,6 @@
 ![Header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=Code%20Archive)
 
-## Contributors
+## 🧑🏻‍💻 Contributors
 <table>
   <td align="center"><a href="https://github.com/CharlesKim615"><img src="https://avatars.githubusercontent.com/u/180646870?v=4" width="100px;" alt=""/><br /><sub><b>김수철</b></sub></a><br /><sub>Kookmin Univ.<br />Automotive Engineering</sub><br /></td>
   <td align="center"><a href="https://github.com/GreenKronic"><img src="https://avatars.githubusercontent.com/u/58392517?v=4" width="100px;" alt=""/><br /><sub><b>곽기헌</b></sub></a><br /><sub> Kookmin Univ.<br />Automotive Engineering</sub><br /></td>
@@ -9,7 +9,8 @@
   <td align="center"><a href="https://github.com/inqueue0979"><img src="https://avatars.githubusercontent.com/u/69336138?v=4" width="100px;" alt=""/><br /><sub><b>조원재</b></sub></a><br /><sub>Kookmin Univ.<br />Computer Science</sub><br /></td>
 </table>
 
-## Reference
+
+## 🗂️ Reference
 
 ### 1.SENSOR
 

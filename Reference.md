@@ -9,6 +9,8 @@
   [LiDAR-point-cloud-based-3D-object-detection](https://github.com/RobuRishabh/LiDAR-point-cloud-based-3D-object-detection/blob/main/Project.ipynb)
     
   -Camera
+  
+  [object Detection with YOLOV8 and YOLONAS](https://medium.com/@Mert.A/how-to-use-yolov8-and-yolo-nas-for-object-detection-8c5893939480)
 
   -LiDAR Camera Fusion
   
@@ -26,6 +28,9 @@
   [traffic lights tracking](https://github.com/RomeroRodriguezD/Traffic-Lights-Tracking-and-Color-Detection-OpenCV)
 
   [traffic lighs negotiation](https://kr.mathworks.com/help/mpc/ug/traffic-light-negotiation.html)
+
+  [traffic lights dection](https://dev.to/andreygermanov/a-practical-introduction-to-object-detection-with-yolov8-neural-network-3n8c)
+  [traffic sign decetion](https://www.kaggle.com/code/pkdarabi/traffic-signs-detection-using-yolov8)
   
   -LANE
 
@@ -41,11 +46,19 @@
 
   [lane detection with openCV](https://medium.com/@mrhwick/simple-lane-detection-with-opencv-bfeb6ae54ec0)
 
+  [lane change with c++](https://autowarefoundation.github.io/autoware.universe/pr-2609/planning/behavior_path_planner/behavior_path_planner_lane_change/)
+  
+  [Pairing Lane Detection with Object Detection](https://srianumakonda.medium.com/pairing-lane-detection-with-object-detection-665b30462952)
+
   -OBSTACLE
  
   -SIGN
+  [Traffic sign Segmentation with classical image processing methods](https://jq0112358.medium.com/traffic-sign-segmentation-with-classical-image-processing-methods-canny-edge-detection-color-8ff1096535db)
     
   -PARKING
+  [Snagging parking Spaces wiht mask R-CNN and Python](https://medium.com/@ageitgey/snagging-parking-spaces-with-mask-r-cnn-and-python-955f2231c400)
+  
+  [parking space detection reference code](https://github.com/sbarik-git/parking-space-detection/blob/main/ParkingSpacePicker.py)
  
   -GYRO
   
@@ -90,3 +103,7 @@
    [PyTorch Tutorial to Object Detection](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Object-Detection/tree/master)
    
    [A disection into 3D Object Detection through PyTorch based code and ComplexYOLO Algorithm](https://medium.com/@abdulhaq.ah/a-disection-into-3d-object-detection-through-pytorch-based-code-and-complexyolo-algorithm-d45cceab4570)
+
+[Qcar training set](https://universe.roboflow.com/dajeon-university/q-car-0328/dataset/2)
+
+
